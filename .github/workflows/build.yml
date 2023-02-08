@@ -31,7 +31,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.GHCR_TOKEN }}
       -
         name: Build and push
         uses: docker/build-push-action@v4
@@ -40,5 +40,5 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/inetmiguel/app:latest
-            ghcr.io/inetmiguel/app:1.0.0
+            ghcr.io/inetmiguel/mend:latest
+            ghcr.io/inetmiguel/mend:1.0.0
